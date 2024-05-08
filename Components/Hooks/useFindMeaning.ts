@@ -5,18 +5,18 @@ export default function useFindMeaning(word: string) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true); // Set loading state to true before fetching
+    setIsLoading(true); 
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       .then(response => response.json())
       .then(data => {
         setDict(data);
-        setIsLoading(false); // Set loading state to false after fetching
+        setIsLoading(false); 
       })
       .catch(error => {
         console.error(error);
-        setIsLoading(false); // Set loading state to false in case of error
+        setIsLoading(false); 
       });
-  }, [word]); // This array ensures the effect only runs when 'word' changes
+  }, [word]); 
 
-  return { dict, isLoading }; // Return both dict and isLoading state
+  return { dict, isLoading }; 
 }

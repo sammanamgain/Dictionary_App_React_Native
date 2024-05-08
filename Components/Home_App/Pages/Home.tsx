@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 
 export default function Home() {
   const [isRecieved, setIsRecieved] = React.useState(false);
-  const { dict, isLoading } = useFindMeaning('good');
+  const { dict, isLoading } = useFindMeaning('atone');
 
   useEffect(() => {
     if (!isLoading) {
